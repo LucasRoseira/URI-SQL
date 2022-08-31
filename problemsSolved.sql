@@ -107,3 +107,45 @@ from products prod
 inner join providers prov
 on prov.id = prod.id_providers
 where prov.name like 'Ajax SA'
+
+2618)
+
+select prod.name, prov.name, cat.name
+from products prod
+inner join categories cat
+on prod.id_categories = cat.id
+inner join providers prov
+on prod.id_providers = prov.id
+where prov.name like 'Sansul SA'
+and cat.name like 'Imported'
+
+
+2619)
+
+select prod.name, prov.name, prod.price
+from products prod
+inner join providers prov
+on prod.id_providers = prov.id
+inner join categories cat 
+on prod.id_categories = cat.id 
+where prod.price > 1000 
+and cat.name like 'Super Luxury'
+
+2620)
+
+
+select cust.name, ord.id
+from customers cust
+inner join orders ord
+on cust.id = ord.id_customers
+where ord.orders_date between '01/01/2016' and '06/30/2016'
+
+2621)
+
+select prod.name
+from products prod
+inner join providers prov
+on prod.id_providers = prov.id
+where prov.name like '%p%'
+and prod.amount between 10 and 20
+
